@@ -1,5 +1,6 @@
 # college-maths
-A colection of course notes about themes of College's Mathematics.
+
+Notes of Mathematical College's classes 
 
 These archives are class notes of some courses that I did. All notes are written in Portuguese.
 
