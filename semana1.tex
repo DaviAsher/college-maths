@@ -26,8 +26,8 @@ Prove que $n+1=1+n$ $\forall n \in \mathbb{N}$
 \end{prob}
 
 \begin{proof}
-O caso $n=1$ é óbvio. Se vale para $n$, queremos mostrar que também vale para $s(n)$. Temos que: $$1+s(n)=s(n+1)\overset{hipotese}{=}s(1+n)=1+s(n)$$
-Logo a soma de números naturais é \textbf{comutativa}.
+O caso $n=1$ é óbvio. Se vale para $n$, queremos mostrar que também vale para $s(n)$. Temos que: $$1+s(n)=s(n+1)\overset{hipotese}{=}s(1+n)=1+s(n)(*)$$
+Agora, vamos provar que $n+m=m+n$ para todos $n,m \in \mathbb{N}$. Por indução, suponha $m+n=n+m$, daí veja que $$n+s(m)\overset{assoc.}{=}(n+m)+1=(m+n)+1\overset{assoc.}{=}m+(n+1)\overset{(*)}{=}(m+1)+n=s(m)+n$$
 \end{proof}
 
 \begin{prob}
@@ -46,6 +46,14 @@ Se $1 \in A$ então 1 é o elemento mínimo. Definimos o conjunto $I_{n}$ como o
 não é vazio, então $B \neq \mathbb{N}$. Ou seja, $B$ não pode cumprir o 3º axioma de Peano. Como $1 \in B$, existe $n \in B$ tal que $s(n) \notin B$. Portanto $s(n)$ será o mínimo de $A$, pois ,de fato, $A\cap I_{n}=\varnothing$, mas $A\cap I_{n+1} \neq \varnothing $ e $ I_{n+1}= I_{n}\cup \left \{ n+1 \right \}$, logo $n+1 \in A$.
 \end{proof}
 Uma afirmação que é muito forte e útil é que o Princípio da Boa Ordem é \textit{equivalente} ao Princípio da Indução. A primeira parte da prova já foi feita a cima.
+
+\begin{prob}
+Prove o Princípio da Indução como uma consequência do Principio da Boa Ordem 
+\end{prob}
+
+\begin{proof}
+Suponha $X \subset \mathbb{N}$ tal que $1 \in X$ e $n \in X\Rightarrow n+1 \in X$, obviamente 1 é o elemento mínimo de $X$. Dessa forma, se $X \neq \mathbb{N}$, o conjunto $\mathbb{N}-X$ possui um elemento mínimo $t$, de forma que $t=p+1$, logo $p \in X$, pois $p<k$. Portanto $p+1=k\notin X$, o que é uma contradição, visto que $1$ e $p$ pertencem a $X$. 
+\end{proof}
 
 
 \subsection{Conjuntos Finitos}
