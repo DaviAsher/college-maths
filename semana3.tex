@@ -1,0 +1,140 @@
+
+
+\section{Semana 3: Sequências } 
+\subsection{Definições}
+Definimos uma \textit{sequência} de números reais como uma função $x: \mathbb{N} \rightarrow \mathbb{R}$, que "leva" cada natural em um número real $x_{n}$, o qual é chamado de n-ésimo termo da sequência. Denotamos uma sequência por $(x_{1},...,x_{n})$, ou de forma mais resumida, $(x_{n})$. Dizemos também que uma sequência é \textit{limitada superiormente}(\textit{resp. inferiormente}) quando existe $c \in \mathbb{R}$ tal que $x_{n} \leq c$ ( resp. $x_{n} \geq c$) para todo $n \in \mathbb{N}$. E é dita \textit{limitada} se for limitada (superior, inferior)mente.
+
+Outra definição importante é o conceito de \textit{subsequência}. Dada uma sequência $x=(x_{n})_{n \in \mathbb{N}}$, uma subsequência de $x$ é a aplicação da função $x$ ao domínio $\mathbb{N}'=\left \{ n_{1}<n_{2}<...<n_{k}<... \right \} \subset \mathbb{N}$. De forma mais clara, é a composição $x\circ f: \mathbb{N} \rightarrow \mathbb{R}$, onde $f: \mathbb{N} \rightarrow \mathbb{N}$ é uma função estritamente crescente com $f(k)=n_{k}$
+
+\subsection{Limite de uma sequência}
+Dizemos que $limx_{n}=a$(ou $\ \lim_{x\to\infty} x_{n} \ = a$) se $\forall \varepsilon \in \mathbb{R}_{>0}$ $\exists n_{0} \in \mathbb{N}$ tal que $n \geq n_{0} \Rightarrow \left | x_{n}-a \right |<\varepsilon$ Isto é, para valores muito grandes de $n$, os termos $x_{n}$ tornam-se tão perto de $a$ quanto desejemos. 
+
+Ou seja, estipulando um $\varepsilon>0$, existe um índice $n_{0}$ tal que todos os termos com índice $n>n_{0}$ são valores aproximados de $a$ com erro menor que $\varepsilon$.
+
+Lembre-se que, pelo Teorema 2.1, podemos dizer que $x_{n} \in (a-\varepsilon,a+\varepsilon)$ $\forall n_{0}>n$
+
+\begin{prob}
+Prove que $\ \lim_{n\to\infty} 1/n \ = 0$
+\end{prob}
+\begin{proof}
+Primeiramente, olhando para o limite, não é difícil acreditar que ele é verdade, visto que quanto maior o $n$, menor fica o $1/n$, vamos formalizar essa intuição. De fato, $\forall \varepsilon >0$ existe $n_{0}$ tal que $1/n_{0} < \varepsilon$, visto que $1/n$ fica pequeno quanto queiramos para $n$ arbitrariamente grande. Logo $-\varepsilon <0< \frac{1}{n} \leq \frac{1}{n_{0}} < \varepsilon$, isto é, $1/n \in (0-\varepsilon, 0+\varepsilon)$.
+\end{proof}
+Se uma sequência possui limite, dizemos que ela é \textit{convergente}, caso contrário, dizemos que ela é \textit{divergente}.
+
+\begin{theorem}
+Se $lim x_{n}=a$ e $lim x_{n} = b$, então $a=b$
+\end{theorem}
+\begin{proof}
+Queremos demonstrar que o limite de uma sequência é único. Suponha que $a \neq b$ e $lim x_{n}=a$, então sejam os intervalos disjuntos $I=(a-\varepsilon ,a+\varepsilon )$ e $J=(b-\varepsilon ,b+\varepsilon )$. Logo existe $n > n_{0}$ tal que $x_{n} \in I \Rightarrow x_{n} \notin J$, logo $lim x_{n} \neq b$. 
+\end{proof}
+
+\begin{theorem}
+Toda sequência convergente é limitada
+\end{theorem}
+\begin{proof}
+Seja $lim x_{n}=a$ e tomando $\varepsilon=1$, então para algum $n$,
+$x_{n} \in (a-1,a+1)$, seja o conjunto finito $\left \{ x_{1},x_{2},...,x_{n_{0}},a-1,a+1 \right \}$ e considere $b$ como o menor elemento do conjunto e $c$ o maior elemento. Portanto todos os termos da sequência então contidos no intervalo $[b,c]$
+\end{proof}
+ 
+Dizemos que uma sequência $(x_{n})$ é \textit{monótona} quando $x_{n} \geq x_{n+1}$ para todo $n$ natural ou então $x_{n} \leq x_{n+1}$ para todo $n$. No primeiro caso a sequência é \textit{monótona não crescente} e no segundo \textit{monótona não decrescente}. Quando a sequência é estritamente crescente, isto é, $x_{n+1}>x_{n}$, então dizemos que a sequência é \textit{crescente}, caso contrário, dizemos que ela é \textit{decrescente}. 
+
+Veja que, para que uma sequência monótona seja limitada basta que possua uma subsequência limitada. Pois seja $(x_{n'}) \in \mathbb{N}^{'}$ uma subsequência limitada da sequência não decrescente $(x_{n})$, temos que $x_{n'} \leq c$ para todo $n' \in \mathbb{N}'$. Dessa maneira, dado qualquer $n \in \mathbb{N}$ existe $n' \in \mathbb{N}'$ tal que $n < n' \Rightarrow x_{n} \leq x_{n'}\leq c$.
+
+\begin{theorem}
+Toda sequência monótona limitada é convergente
+\end{theorem}
+\begin{proof}
+Suponha sem perda de generalidade que $(x_{n})$ é não-decrescente. Se $(x_{n})$ é limitada, o conjunto $X=\left \{ x_{n};n \in \mathbb{N} \right \}$ é limitado pelo $s=sup(\left \{ x_{n};n \in \mathbb{N} \right \})$. Logo $\forall \varepsilon, \exists n_{0} \in \mathbb{N}$ tal que $x_{n_{0}}>s-\varepsilon$, ora mas $s>x_{n}$ para todo $n \in \mathbb{N}$. Portanto para $n>n_{0}$ temos: $$s+\varepsilon >s\geq x_{n}\geq x_{n_{0}}>s-\varepsilon \Rightarrow x_{n} \in (s+\varepsilon,s-\varepsilon)\Rightarrow limx_{n}=supX$$
+
+Para uma sequência não crescente, o limite seja o ínfimo do conjunto dos valores da sequência.
+\end{proof}
+
+\begin{corol}(\textbf{Bolzano-Weierstrass})
+Toda sequência limitada possui uma subsequência convergente
+\end{corol}
+\begin{proof}
+Basta provar que toda sequência limitada possui uma subsequência monótona, o que conclui o problema pelo Teorema 3.3. %completar prova%
+\end{proof}
+\begin{prob}
+Dizemos que $(x_{n})$ é uma \textit{sequência de Cauchy} quando para todo $\varepsilon >0$, existe $n_{0} \in \mathbb{N}$ tal que $m,n > n_{0} \Rightarrow |x_{m}-x_{n}|< \varepsilon$. Prove que:
+\begin{itemize}
+    \item a) Toda sequência de Cauchy é limitada
+    \item b) $(x_{n})$ converge $\Leftrightarrow$ é de Cauchy
+\end{itemize}
+\end{prob}
+\begin{proof}
+\begin{itemize}
+    \item a) Se $(x_{n})$ é de Cauchy, $\exists n_{0}$ tal que $n,m> n_{0} \Rightarrow |x_{m}-x_{n}|<1$, em particular, $|x_{n}-x_{n_{0}}|<1$, seja $A=\left \{ x_{1},x_{2},...,x_{n_{0}},x_{n_{0}}-1,x_{n_{0}}+1 \right \}$. Seja $a=minA$ e $b=maxB$, então $x_{n} \in [a,b] \forall n \in \mathbb{N}$.
+    \item b) Ida: Seja $(x_{n})$ convergente, então $limx_{n}=L$, dado $\varepsilon>0$ temos que $|x_{n}-L|< \frac{\varepsilon}{2}$, para todo $n > n_{0}$. Logo $n,m > n_{0} \Rightarrow |x_{n}-L|< \frac{\varepsilon}{2}$ e $|x_{m}-L|< \frac{\varepsilon}{2}$, donde $$|x_{m}-x_{n}|=|x_{m}-L+L-x_{n}| \leq |x_{m}-L|+|L-x_{n}|=|x_{m}-L|+|x_{n}-L| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon $$
+    Logo $(x_{n})$ é de Cauchy.
+    
+    Volta: Como toda sequência de Cauchy é limitada (cf. a)), então existe uma subsequência $x_{n_{k}}$ de $x_{n}$ que é convergente, considere $limx_{n_{k}}=L$, queremos mostrar que $limx_{n}=L$. De fato $\exists m_{1}\in \mathbb{N}$ tal que, $m,n > m_{1} \Rightarrow |x_{m}-x_{n}|< \frac{\varepsilon}{2}$ e $\exists m_{2}$ tal que $k>m_{2}\Rightarrow |x_{n_{k}}-L|< \frac{\varepsilon}{2}$. Seja $M=max\left \{ m_{1},m_{2} \right \}$ e $n>m_{1}$, como $n_{M}>M$, $|x_{n_{M}}-x_{n}|<\frac{\varepsilon}{2}$ e $|x_{n_{M}}-L|< \frac{\varepsilon}{2}\Rightarrow |x_{n}-L|< \varepsilon$
+\end{itemize}
+\end{proof}
+
+\subsection{Propriedades dos limites}
+ 
+\begin{theorem}
+Se $a=limx_{n}$, então: Se $b<a$, $\exists n_{0} \in \mathbb{N}$ tal que $n>n_{0} \Rightarrow x_{n}>b$. A vise-versa ocorre quando $b>a$.
+\end{theorem}
+\begin{proof}
+Seja $\varepsilon=a-b>0$, pela definição de limite $\exists n_{0}$ tal que $n>n_{0} \Rightarrow a-\varepsilon<x_{n}<a+\varepsilon \overset{b=a-\varepsilon }{\Rightarrow } b<x_{n}$. Analogamente conseguimos provar o caso $b>a$.
+\end{proof}
+
+\begin{corol}
+Sejam $a=limx_{n}$ e $b=limy_{n}$. Se existe $n_{0}$ tal que $n>n_{0} \Rightarrow x_{n}\leq y_{n}$ $\forall n>n_{0}$, então $a\leq b$. Em particular, se $x_{n}\leq b$ para todo $n$ suficientemente grande então $lim x_{n} \leq b$
+\end{corol}
+
+\begin{proof}
+Suponha por absurdo que $a>b$ e considere $c=\frac{a+b}{2}$, assim temos $b<c<a$. Dessa forma, existe $n_{1} \in \mathbb{N}$ tal que $n \geq n_{1} \Rightarrow x_{n}>c$ e analogamente, existe $n_{2}$ tal que para $n>n_{2} \Rightarrow y_{n} < c$. Seja $N=\left \{ n_{0},n_{1},n_{2} \right \} \Rightarrow y_{n}<c<x_{n}\leq y_{n}$. Absurdo.
+\end{proof}
+Veja que, considerando $x_{n} < y_{n}$ não necessariamente podemos concluir que $a<b$. Tome por exemplo as sequências $x_{n}=0$ e $y_{n}=\frac{1}{n}$.
+
+\begin{theorem}(\textbf{Teorema do Sanduíche})
+Se $limx_{n}=limy_{n}=a$ e $x_{n} \leq z_{n} \leq y_{n}$ para todo $n>n_{0}$, então $limz_{n}=a$
+\end{theorem}
+
+\begin{proof}
+O enunciado diz que existe um $n_{0} \in \mathbb{N}$ tal que $n>n_{0} \Rightarrow x_{n} \leq z_{n} \leq y_{n}$. De fato, seja $\varepsilon>0$, existe $n_{1}$ tal que $n>n_{1} \Rightarrow a-\varepsilon<x_{n}<a+\varepsilon$ e existe$n_{2}$ tal que $n>n_{2} \Rightarrow a-\varepsilon < y_{n} < a+\varepsilon$. Seja $n_{0}=max\left \{ n_{1},n_{2} \right \}$, então $n>n_{0} \Rightarrow a-\varepsilon<x_{n}\leq z_{n}\leq y_{n}<a+\varepsilon \Rightarrow z_{n} \in (a-\varepsilon,a+\varepsilon)$
+\end{proof}
+
+\subsection{Operações com limites}
+Vamos falar algumas proposições relacionadas as operações com limites. Omitiremos as provas, visto que são imediatas.
+
+\begin{theorem}(\textbf{Propriedades dos limites})
+\begin{itemize}
+    \item Se $limx_{n}=0$ e $(y_{n})$ é uma sequência limitada (não necessariamente convergente), então $lim(x_{n}.y_{n})=0$
+    \item Se $limx_{n}=a$ e $limy_{n}=b$, então: 1) $lim(x_{n}\pm y_{n})=a\pm b$; 2)$lim(x_{n}.y_{n})=a.b$; 3) $lim(\frac{x_{n}}{y_{n}})=\frac{a}{b}$, se $b \neq 0$
+\end{itemize}
+\end{theorem}
+
+
+\begin{prob}
+Prove que, se $x_{n}>0$ e $lim(\frac{x_{n+1}}{x_{n}})=a<1$, então $limx_{n}=0$
+\end{prob}
+\begin{proof}
+Como $a<1$, então podemos escolher $c=\frac{a+1}{2}>a$. Existe $n_{0} \in \mathbb{N}$ tal que $n>n_{0}\Rightarrow \frac{x_{n+1}}{x_{n}}=a<c$ e segue por indução\footnote{Veja que $x_{n_{0}+1}<c.n_{0}$, o que implica que $x_{n_{0}+2}<c.x_{n_{0}+1}<c^{2}.x_{n_{0}}$, e assim por diante.} que $x_{n_{0}+k}<c^{k}.x_{n_{0}}$ $\forall k \geq 1$. Logo temos, $0<x_{n_{0}+k}<c^{k}.x_{n_{0}}\xrightarrow[0<c<1]{k\rightarrow \infty }0$, logo $limx_{n}=0$
+\end{proof}
+\newpage
+
+\subsection{Limites infinitos}
+Dizemos que $limx_{n}=+\infty$, se dado $A$ real, existe $n_{0} \in \mathbb{N}$ tal que $n>n_{0}\Rightarrow x_{n}>A$, ou seja, os termos da sequência crescem "para sempre", de modo que, dado qualquer número real, em algum momento, os termos da sequência serão maiores do que $A$. Analogamente definimos $limx_{n}=-\infty$,  dado $A$ real, existe $n_{0} \in \mathbb{N}$ tal que $n>n_{0}\Rightarrow x_{n}<A$. Ou seja, dizer que o limite de uma sequência tende a (mais ou menos) infinito, significa dizer que a sequência não é convergente.
+
+\begin{theorem}(\textbf{Propriedades dos limites infinitos})
+\begin{itemize}
+    \item Se $limx_{n}=+\infty$ e $(y_{n})$ é limitada inferiormente, então $lim(x_{n}+y_{n})=+\infty$
+    \item Se $x_{n}>c>0,y_{n}>0$ e $limy_{n}=0$ então $lim\frac{x_{n}}{y_{n}}=+\infty$
+    \item Se $(x_{n})$ é limitada e $limy_{n}=+\infty$ então $lim\frac{x_{n}}{y_{n}}=0$
+\end{itemize}
+\end{theorem}
+
+Os resultados são análogos quando os limites tendem a $-\infty$ (veja que se $lim(x_{n})=+\infty$, então $lim(-x_{n})=-\infty$
+
+\begin{proof}
+\begin{itemize}
+    \item Existe $c \in \mathbb{R}$ tal que $y_{n}\geq c$ para todo $n\in\mathbb{N}$. Seja $A>0$, então para algum $n$ arbitrário, $x_{n}>A-c\Rightarrow x_{n}+y_{n}=A-c+c=A$, logo $lim(x_{n}+y_{n})=+\infty$
+    \item Seja $A>0$ e $n>n_{0}\Rightarrow y_{n}>\frac{c}{A}$, então $n>n_{0}\Rightarrow x_{n}/y_{n}>c.\frac{A}{c}=A$
+    \item  Existe $c>0$ tal que $|x_{n}|\leq c$ e dado arbitrariamente $\varepsilon>0$ para algum $n$, $y_{n}>\frac{c}{\varepsilon}$ e portanto $|\frac{x_{n}}{y_{n}}|<\varepsilon$
+\end{itemize}
+\end{proof}
+\newpage
